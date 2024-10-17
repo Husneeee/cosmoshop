@@ -1,22 +1,19 @@
-import { montserrat, roboto } from "@/helpers/fonts";
-import "../global.scss";
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
+import { UserMenu } from '@/components/user-menu'
+import React from 'react'
+import { Container } from 'react-bootstrap'
 
-export const metadata = {
-	title: {
-		template: "%s | Cosmo Shop",
-		default: "Cosmo Shop",
-	},
-	description: "Cheap electronic devices",
-};
-
-export default function RootLayout({ children }) {
-	return (
-		<html
-			lang="en"
-			className={` ${roboto.variable} ${montserrat.variable}`}
-		>
-			
-			<body>{children}</body>
-		</html>
-	);
+const Layout = ({children}) => {
+  return (
+    <>
+        <Header>
+          <UserMenu/>
+        </Header>
+        <Container>{children}</Container>
+        <Footer/>
+    </>
+  )
 }
+
+export default Layout
